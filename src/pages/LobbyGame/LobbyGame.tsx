@@ -15,10 +15,10 @@ import {Button} from './Components/Button';
 import {Header} from './Components/Header';
 import {useDispatch, useSelector} from 'react-redux';
 import {getGame} from '../../redux/features/getData';
+import { hexToRGB } from '../../constants/hexToRGB';
 export const LobbyGameScreen = ({match}: any) => {
   const id = match.params.id;
   const router = useIonRouter();
-  const  routerName = router.routeInfo
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getGame({id}));
@@ -26,20 +26,7 @@ export const LobbyGameScreen = ({match}: any) => {
   const getData: any = useSelector((state) => state);
   const [isRules, setIsRules] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
-  function hexToRGB(hex: string, alpha: number) {
-    if(hex === undefined){
-      hex="#00000"
-    }
-    var r = parseInt(hex.slice(1, 3), 16),
-      g = parseInt(hex.slice(3, 5), 16),
-      b = parseInt(hex.slice(5, 7), 16);
 
-    if (alpha) {
-      return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
-    } else {
-      return 'rgb(' + r + ', ' + g + ', ' + b + ')';
-    }
-  }
   const goBack = () => {
     router.goBack();
   };

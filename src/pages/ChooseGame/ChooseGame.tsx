@@ -32,10 +32,15 @@ export const ChooseGameScreen = () => {
         <div className={style.emptySpace}></div>
         {gamesData.map((game) => {
           return (
-            <div style={{display: 'flex', height: '17%',   borderTop: '1px solid black',
-            borderBottom: '1px solid black',
-            borderLeft: '2px solid black',
-            borderRight: '2px solid black',}}>
+            <div
+              style={{
+                display: 'flex',
+                height: '17%',
+                borderTop: '1px solid black',
+                borderBottom: '1px solid black',
+                borderLeft: '2px solid black',
+                borderRight: '2px solid black',
+              }}>
               <div
                 style={{
                   background: game.bgColor,
@@ -48,7 +53,6 @@ export const ChooseGameScreen = () => {
                   width: '100%',
                   background: '#d9d9d9',
                   display: 'flex',
-
                 }}>
                 <div style={{display: 'flex', height: '100%'}}>
                   <div className={style.game}>
